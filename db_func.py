@@ -4,8 +4,12 @@ import streamlit as st
 
 deta_key = st.secrets['deta_key']
 db = Deta(deta_key)
+client_db = db.Base('clients')
+intr_db = db.Base('interactions')
+
 
 def get_all_clients():
+    data = client_db.fetch()
     # Your code to fetch all clients from the database or any other data source
     pass
 
